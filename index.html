@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/75f6c89321.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="text/javascript" src="../js/main.js"></script>
+
+  <title>YouTube Clone</title>
+</head>
+
+<body>
+  <nav id="topNav">
+    <div class="logo">
+      <i class="fas fa-lg fa-bars"></i><i class="fab fa-lg fa-youtube"></i><span class="youtubetext">YouTube</span><span
+        class="sup">DE</span>
+    </div>
+    <div class="searchbar">
+      <input type="text" placeholder="  Search" class="search" /><button class="search-button">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+    <div class="user-buttons">
+      <i class="fas fa-lg fa-video"></i><i class="fas fa-lg fa-th"></i><i class="fas fa-lg fa-bell"></i><button
+        id="showUser"><img src="./img/irena.jpg" class="user-photo" alt="user icon" /></button>
+    </div>
+  </nav>
+  <!-- User Settings window-->
+  <div class="user-settings" id="userSettings">
+    <div class="user-settings-top">
+      <ul>
+        <li><span class="setting-icon"><i class="far fa-user"></span></i> Your channel</li>
+        <li><span class="setting-icon"><i class="fas fa-dollar-sign"></i></span> Paid memberships</li>
+        <li><span class="setting-icon"><i class="fas fa-cog"></i></span> YouTube Studio</li>
+        <li><span class="setting-icon"><i class="fas fa-user"></i></span> Switch Account</li>
+        <li><span class="setting-icon"><i class="fas fa-sign-out-alt"></i></span> Sign out</li>
+      </ul>
+    </div>
+
+    <div class="user-settings-bottom">
+      <ul>
+        <button id="darkMode">
+          <li><span class="setting-icon"><i class="fas fa-sign-out-alt"></i></span> Dark theme</li>
+        </button>
+        <li><span class="setting-icon"><i class="fas fa-language"></i></span> Language: English</li>
+        <li><span class="setting-icon"><i class="fas fa-globe"></i></span> Location: Europe</li>
+        <li><span class="setting-icon"><i class="fas fa-cog"></i></span> Settings</li>
+        <li><span class="setting-icon"><i class="fas fa-shield-alt"></i></span> Your data in YouTube</li>
+        <li><span class="setting-icon"><i class="fas fa-question-circle"></i></span> Help</li>
+        <li><span class="setting-icon"><i class="fas fa-question-circle"></i></span> Send feedback</li>
+        <li><span class="setting-icon"><i class="fas fa-keyboard"></i></span> Keyboard shortcuts</li>
+      </ul>
+    </div>
+  </div>
+
+  <!--SCRIPTS-->
+  <script>
+    showUser.onclick = function () {
+      console.log("hey")
+      document.getElementById("userSettings");
+      if (userSettings.classList.contains("show") == false) {
+        userSettings.classList.add("show");
+      } else {
+        userSettings.classList.remove("show");
+      }
+    };
+  </script>
+
+  <!--Dark Theme-->
+  <div class="show-dark-mode" id="darkModeBox">
+    <span>DARK THEME</span>
+    <div class="bar">
+      <input type="checkbox" name="dark-theme" id="darkModeInput">
+      <label for="darkModeInput" id="slider"></label>
+    </div>
+  </div>
+
+  <script>
+    darkMode.onclick = function () {
+      console.log("open dark mode box");
+      document.getElementById("darkModeBox");
+      if (darkModeBox.classList.contains("show-flex") == false) {
+        darkModeBox.classList.add("show-flex");
+      } else {
+        darkModeBox.classList.remove("show-flex");
+      }
+      if (userSettings.classList.contains("show") == true) {
+        userSettings.classList.remove("show");
+      }
+
+    };
+  </script>
+
+
+  <script>
+    slider.onclick = function () {
+      console.log("dark mode")
+      const body = document.body;
+      if (body.classList.contains("dark-mode") == false) {
+        body.classList.add("dark-mode");
+        videoHolder.classList.add("dark-mode");
+        videoNav.classList.add("dark-mode");
+        videoInfo.classList.add("dark-mode");
+      } else {
+        body.classList.remove("dark-mode");
+        videoHolder.classList.remove("dark-mode");
+        videoNav.classList.remove("dark-mode");
+        videoInfo.classList.remove("dark-mode");
+      }
+    };
+  </script>
+
+  <!--MAIN nav bar-->
+  <main>
+    <aside>
+      <ul>
+        <li><i class="fas fa-2x fa-home"></i><br>Home</li>
+        <li><i class="fas fa-2x fa-fire"></i><br>Trending</li>
+        <li><i class="fab fa-2x fa-youtube"></i><br>Subscriptions</li>
+        <li><i class="fas fa-2x fa-play"></i><br>Library</li>
+      </ul>
+    </aside>
+    <div class="wrapper">
+      <section class="video-nav" id="videoNav">
+        <div class="list-wrapper">
+          <ul>
+            <li>home</li>
+            <li>videos</li>
+            <li>playlists</li>
+            <li>community</li>
+            <li>channels</li>
+            <li>about</li>
+            <li><i class="fas fa-search"></i></li>
+          </ul>
+        </div>
+        <div class="arrow"><i class="fas fa-chevron-right"></i></li>
+        </div>
+      </section>
+      <div class="videos-holder" id="videoHolder">
+
+        <!--First Section-->
+        <section class="video-section">
+          <div class="video-section-info" id="videoInfo">
+            <h3>Uploads</h3><i class="fas fa-play"></i><span class="play-all">Play All</span>
+          </div>
+
+          <div class="videos">
+            <div class="video">
+              <img src="img/raceing.jpg">
+              <h4>Horse Racing</h4>
+              <p class="video-info">25K views • 24 hours ago</p>
+              <span class="time">17:14</span>
+              <div class="hover-div">
+                <span class="watch-later"><i class="far fa-clock"></i><span class="watch-later-text">Watch
+                    Later</span></span>
+                <span class="queue"><i class="fas fa-bars"></i><span class="queue-text">Add To Queue</span></span>
+              </div>
+            </div>
+
+            <div class="video">
+              <img src="img/motobike.jpg">
+              <h4>Motor Bikes</h4>
+              <p class="video-info">29K views • 5 days ago</p>
+              <span class="time">10:10</span>
+              <div class="hover-div">
+                <span class="watch-later"><i class="far fa-clock"></i><span class="watch-later-text">Watch
+                    Later</span></span>
+                <span class="queue"><i class="fas fa-bars"></i><span class="queue-text">Add To Queue</span></span>
+              </div>
+            </div>
+
+            <div class="video">
+              <img src="img/fastcars.jpg">
+              <h4>Fastest Cars</h4>
+              <p class="video-info">225K views • 10 days ago</p>
+              <span class="time">11:11</span>
+              <div class="hover-div">
+                <span class="watch-later"><i class="far fa-clock"></i><span class="watch-later-text">Watch
+                    Later</span></span>
+                <span class="queue"><i class="fas fa-bars"></i><span class="queue-text">Add To Queue</span></span>
+              </div>
+            </div>
+
+            <div class="video">
+              <img src="img/amplifier.jpg">
+              <h4>Amplifiers</h4>
+              <p class="video-info">415K views • 2 year ago</p>
+              <span class="time">00:10</span>
+              <div class="hover-div">
+                <span class="watch-later"><i class="far fa-clock"></i><span class="watch-later-text">Watch
+                    Later</span></span>
+                <span class="queue"><i class="fas fa-bars"></i><span class="queue-text">Add To Queue</span></span>
+              </div>
+            </div>
+
+            <hr>
+        </section>
+
+        <!--NEW SECTION-->
+        <section class="video-section">
+          <div class="video-section-info">
+            <h3>Movies</h3><i class="fas fa-play"></i><span class="play-all">Play All</span>
+          </div>
+
+          <div class="videos">
+            <div class="video">
+              <img src="img/movie1.jpg">
+              <h4>Game of Thrones</h4>
+              <p class="video-info">25K views • 24 hours ago</p>
+              <span class="time">17:14</span>
+              <div class="hover-div">
+                <span class="watch-later"><i class="far fa-clock"></i><span class="watch-later-text">Watch
+                    Later</span></span>
+                <span class="queue"><i class="fas fa-bars"></i><span class="queue-text">Add To Queue</span></span>
+              </div>
+            </div>
+
+            <div class="video">
+              <img src="img/movie2.jpg">
+              <h4>Life of Brian</h4>
+              <p class="video-info">45K views • 3 months ago</p>
+              <span class="time">10:10</span>
+              <div class="hover-div">
+                <span class="watch-later"><i class="far fa-clock"></i><span class="watch-later-text">Watch
+                    Later</span></span>
+                <span class="queue"><i class="fas fa-bars"></i><span class="queue-text">Add To Queue</span></span>
+              </div>
+            </div>
+
+            <div class="video">
+              <img src="img/movie3.jpg">
+              <h4>Sherlock</h4>
+              <p class="video-info">225K views • 10 days ago</p>
+              <span class="time">11:11</span>
+              <div class="hover-div">
+                <span class="watch-later"><i class="far fa-clock"></i><span class="watch-later-text">Watch
+                    Later</span></span>
+                <span class="queue"><i class="fas fa-bars"></i><span class="queue-text">Add To Queue</span></span>
+              </div>
+            </div>
+
+            <div class="video">
+              <img src="img/the-code.jpg">
+              <h4>The Code</h4>
+              <p class="video-info">312K views • 1 year ago</p>
+              <span class="time">00:47</span>
+              <div class="hover-div">
+                <span class="watch-later"><i class="far fa-clock"></i><span class="watch-later-text">Watch
+                    Later</span></span>
+                <span class="queue"><i class="fas fa-bars"></i><span class="queue-text">Add To Queue</span></span>
+              </div>
+            </div>
+
+            <!-- <div class="video">
+              <img src="img/movie5.jpg">
+              <h4>Dreams</h4>
+              <p class="video-info">225K views • 10 days ago</p>
+              <span class="time">11:11</span>
+              <div class="hover-div">
+                <span class="watch-later"><i class="far fa-clock"></i><span class="watch-later-text">Watch
+                    Later</span></span>
+                <span class="queue"><i class="fas fa-bars"></i><span class="queue-text">Add To Queue</span></span>
+              </div>
+            </div> -->
+
+
+
+
+          </div>
+
+          <hr>
+
+        </section>
+
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
