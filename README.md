@@ -1,4 +1,4 @@
-# YouTube clone - 
+# DCI Project  - YouTube clone 
 
-tech
+### Technology used 
 - flexbox
