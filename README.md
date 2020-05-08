@@ -2,3 +2,6 @@
 
 ### Technology used 
 - flexbox
+- JavaScript
+
+
